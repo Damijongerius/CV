@@ -1,5 +1,17 @@
-export interface colliders{
+import { colliders } from "./Collider";
 
 
-    a();
+
+export class Collider extends colliders{
+
+
+    constructor(offsetX, offsetY){
+
+    }
+
+
+    a(){
+        console.log("run?");
+    }
+
 }
