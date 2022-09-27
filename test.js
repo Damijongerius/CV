@@ -1,10 +1,9 @@
 import * as behavior from "./Engine/behavior/DefaultBehavior.js";
 
-class Test{
+class Test extends behavior.DefaultBehavior{
     Update(){
-        console.log(update);
+        console.log("a");
     }
 }
 
 let test = new Test();
-behavior.Main(test);

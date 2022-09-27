@@ -1,8 +1,0 @@
-interface
-
-variablen die overal moeten 
-
-standaard functies
-
-
-
