@@ -1,0 +1,9 @@
+hier hoef ik eigenlijk niet echt over na te denken. Ik wil graag next.ts + tailwind gebruiken ik heb er al een keertje mee gewerkt neit veel maar ik vind het systeem van react fijn dat je componentjes moet maken en dat je die dan overal kan hergebruiken.
+
+ik heb al ervaring met html css javascript/typescript dus het is het makkelijkste voor dit project
+
+en natuurlijk heb ik ook al een beetje react gebruikt zoals ik zei
+
+en daarna upload ik het naar GitHub pages zodat ik het gratis kan hosten. en koop ik misschien een domein dat 10euro per jaar kost en dan vind ik het super mooi!
+
+later in de toekomst kan ik nog kijken of ik er iets van een database bij wil hebben maar dat denk ik niet. en ik weet ook niet zeker of dat zoals dat mogelijk is.

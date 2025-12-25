@@ -1,0 +1,39 @@
+So before i started making my cv website. I started looking for some inspiration. and while doing so i tought it would be interesting do document everything so when someone looks at my website they can kind of know what my tought process exactly is in that way making my website more interesting because it has a backstory to fall back on.
+
+so then you would probably say first you always want to know why you are doing something, because for sure you don't need to make a website cv to get a software job. Or atleast that is what i think at the moment. So the questions i feel like i should ask myself now is why i should and why i don't need to make a website
+
++ I show off my skills in a unique way
++ A website can show way more about you then a document ever could
++ I like making websites now and then
++ It might show a company my dedication to learning
++ I like challenging myself
+- Making websites is not something i aspire to do
+- It can take a lot of time to perfect a website
+- i don't believe its nessasary
+- it will be on a place where everyone in the entire world can see it 
+
+well its a 5-4, but looking at it from the real perspective there was no way i was not going to do it because im already writing this down on a notepad to later implement it in my website....
+
+What is my motivation?
+well i have to do 3 internships to finish my school and ofcourse i would like a job in IT! and its for fun!
+
+okey so lets start with my inspiration
+(inspiration 1)
+I like the color use, fonts and the way the buttons jump out 
+
+(inspiration 2)
+i like the buble of the person with the background and that you can download a document version of the cv with on the left the profile picture aswell and some little information the background is also very nice with the mountain
+
+(inspiration 3)
+i want to have a skill bar for my soft/hard skills and i like this one. the colors might not be it but i do like the bar.
+
+(inspiration 4)
+i think the boxes of this page look very nice and something about it being rounded makes it look clean and that the blue blob on the top right kinda aligns with the page looks very cool. also a subtle nice use of the shadows from the boxes.
+
+(inspiration 5)
+this inspiration point is just to remember myself that i want to make sure my website is responsive
+
+i was thinking to myself about how i wanted to display my education and i found this timeline wich i tought looked very nice its a code piece already so implementing would be easy but its not exactly the way i want it to be
+https://codepen.io/hunzaboy/pen/qBWRBXw
+this one i also like 
+https://codepen.io/ritz078/pen/LGRWjE/
