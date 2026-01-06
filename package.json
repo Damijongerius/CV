@@ -1,6 +1,6 @@
 {
-  "homepage" : "https://damijongerius.github.io/my-awesome-cv/",
-  "name": "my-awesome-cv",
+  "homepage" : "https://damijongerius.github.io/CV/",
+  "name": "CV",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
