@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { BookOpen } from "lucide-react";
 import ImageGallery from "./ImageGallery";
 import TechPill from "./TechPill";
 import ProjectLinks from "./ProjectLinks";
@@ -56,7 +58,9 @@ export default function ProjectSlide({ project, projectImages, imageIndex, setIm
                     </motion.div>
                     <motion.h2 initial={{y: 20, opacity: 0}} animate={{y: 0, opacity: 1}} transition={{delay: 0.2}}
                                className="text-2xl sm:text-3xl lg:text-5xl font-bold text-foreground mb-3">
-                        {project.title}
+                        <Link to={`/projects/${project.slug}`} className="hover:underline decoration-2 underline-offset-8">
+                            {project.title}
+                        </Link>
                     </motion.h2>
 
                     <motion.p initial={{y: 20, opacity: 0}} animate={{y: 0, opacity: 1}} transition={{delay: 0.3}}
@@ -73,6 +77,16 @@ export default function ProjectSlide({ project, projectImages, imageIndex, setIm
 
                     <motion.div initial={{y: 20, opacity: 0}} animate={{y: 0, opacity: 1}} transition={{delay: 0.5}}
                                 className="flex flex-wrap gap-4 mt-2">
+                        <Link
+                            to={`/projects/${project.slug}`}
+                            className="group relative flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-xl font-semibold shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                        >
+                            <BookOpen size={20} />
+                            Details & Dev Log
+                            {project.posts && project.posts.length > 0 && (
+                                <span className="ml-1 rounded-full bg-white/25 px-2 text-xs">{project.posts.length}</span>
+                            )}
+                        </Link>
                         <ProjectLinks liveUrl={project.liveUrl} githubUrl={project.githubUrl}/>
                     </motion.div>
                 </div>

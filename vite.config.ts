@@ -6,13 +6,13 @@ import path from "path";
 export default defineConfig(({ mode }) => ({
     server: {
         host: "::",
-        port: 8080,
+        port: 5173,
     },
+    base: "/",
     plugins: [react()],
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "./src"),
         },
-        base: "/"
     },
 }));

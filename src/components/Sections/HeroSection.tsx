@@ -1,3 +1,4 @@
+import React from "react";
 import ContactDetail from "@/components/ui/ContactDetail.tsx";
 import PersonalCard from "@/components/ui/PersonalCard.tsx";
 import RotatingText from "@/components/ui/RotatingText.tsx";
@@ -18,7 +19,7 @@ export default function HeroSection() {
             <div className="relative z-10 flex flex-col items-center justify-center gap-8">
 
                 <div className="m-4">
-                    <PulsingStatusButton></PulsingStatusButton>
+                    <PulsingStatusButton />
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
@@ -54,10 +55,7 @@ export default function HeroSection() {
                                 splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
                                 rotationInterval={4000}
                             />
-                            <p
-                                className="text-gray-400 text-sm pt-8"
-
-                            >
+                            <p className="text-gray-400 text-sm pt-8">
                                 Passionate about solving problems through innovative software and AI; curious across the
                                 stack with strong backend expertise and hands-on full-stack and AI experience.
                             </p>
@@ -78,24 +76,24 @@ export default function HeroSection() {
                 <div
                     className="flex md:hidden items-center justify-center gap-3 p-3 bg-white/95 rounded-2xl shadow-xl shadow-black/20 mb-4">
                     <ContactDetail
-                        icon="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                        icon="linkedin.png"
                         name="LinkedIn"
                         backgroundColor="transparent"
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/in/dami-jongerius-498430254/"
                         compact
                     />
                     <ContactDetail
-                        icon="https://cdn-icons-png.flaticon.com/512/281/281769.png"
+                        icon="gmail.webp"
                         name="Gmail"
                         backgroundColor="transparent"
-                        href="mailto:example@gmail.com"
+                        href="mailto:damianojongerius@gmail.com"
                         compact
                     />
                     <ContactDetail
-                        icon="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                        icon="github.png"
                         name="Github"
                         backgroundColor="transparent"
-                        href="https://github.com"
+                        href="https://github.com/Damijongerius"
                         compact
                     />
                 </div>

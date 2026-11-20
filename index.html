@@ -3,15 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dami Jongerius</title>
-    <meta name="description" content="Dami" />
-    <meta name="author" content="Dami" />
-    <meta name="robots" content="index, follow" />
+    <!-- All asset paths in the app are relative; this keeps them working on /projects/... pages -->
+    <base href="/" />
+    <style>html,body{background:#020617;color:#e2e8f0;font-family:system-ui,sans-serif}#root .prerender{max-width:46rem;margin:0 auto;padding:2rem 1rem}#root .prerender a{color:#a5b4fc}</style>
+    <title>Damiano Jongerius – Software Developer, AI & Data</title>
+    <meta
+      name="description"
+      content="Portfolio and CV of Damiano (Dami) Jongerius: software developer focused on AI and data. Work experience, studies, and projects like Nexora, Pantheon Panel and an NDW traffic data collector, with a dev log."
+    />
+    <meta name="author" content="Damiano Jongerius" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://dami.jongerius.app/" />
 
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dami Jongerius" />
+    <meta property="og:title" content="Damiano Jongerius – Software Developer, AI & Data" />
+    <meta
+      property="og:description"
+      content="CV, projects and dev log of Damiano (Dami) Jongerius: software, AI and data."
+    />
+    <meta property="og:url" content="https://dami.jongerius.app/" />
+    <meta property="og:image" content="https://dami.jongerius.app/dami.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Damiano Jongerius – Software Developer, AI & Data" />
+    <meta
+      name="twitter:description"
+      content="CV, projects and dev log of Damiano (Dami) Jongerius: software, AI and data."
+    />
+    <meta name="twitter:image" content="https://dami.jongerius.app/dami.jpg" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Damiano Jongerius",
+        "alternateName": "Dami Jongerius",
+        "url": "https://dami.jongerius.app/",
+        "image": "https://dami.jongerius.app/dami.jpg",
+        "jobTitle": "Software developer",
+        "sameAs": ["https://github.com/Damijongerius"]
+      }
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
+    <noscript>
+      Damiano (Dami) Jongerius – software developer focused on AI and data. This site needs JavaScript to show
+      his CV, projects and dev log.
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

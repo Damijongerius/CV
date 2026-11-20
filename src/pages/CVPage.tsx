@@ -1,23 +1,39 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import SectionScroller from "@/components/ui/SectionScroller.tsx";
 import '@/components/cv/button.css';
 import HeroSection from "@/components/Sections/HeroSection.tsx";
-import ProjectsSection from "@/components/Sections/ProjectsSection.tsx";
-import AcademicsSection from "@/components/Sections/AcademicsSection.tsx";
+import AboutMeSection from "@/components/Sections/AboutMeSection.tsx";
 import ExperienceSection from "@/components/Sections/ExperienceSection.tsx";
+import AcademicsSection from "@/components/Sections/AcademicsSection.tsx";
+import ProjectsSection from "@/components/Sections/ProjectsSection.tsx";
 import ContactSection from "@/components/Sections/ContactSection.tsx";
 
 export default function CVPage() {
     const scrollRef = useRef<HTMLElement>(null);
+    const location = useLocation();
 
     const sections = [
         { id: "home", label: "Home" },
+        { id: "about", label: "About Me" },
         { id: "experience", label: "Experience" },
         { id: "academics", label: "Academics" },
         { id: "projects", label: "Projects" },
         { id: "contact", label: "Contact" },
     ];
 
+    useEffect(() => {
+        const state = location.state as { scrollTo?: string } | null;
+        if (state?.scrollTo && scrollRef.current) {
+            const target = document.getElementById(state.scrollTo);
+            if (target) {
+                scrollRef.current.scrollTo({
+                    top: target.offsetTop,
+                    behavior: "instant",
+                });
+            }
+        }
+    }, [location.state]);
 
     return (
         <>
@@ -31,6 +47,13 @@ export default function CVPage() {
                     className="relative snap-start w-full min-h-screen bg-slate-950 flex items-center justify-center px-4 overflow-hidden"
                 >
                     <HeroSection/>
+                </section>
+
+                <section 
+                    id="about" 
+                    className="relative snap-start w-full bg-gradient-to-br from-sky-600 via-blue-700 to-indigo-800 min-h-screen flex items-center justify-center px-6 py-16"
+                >
+                    <AboutMeSection />
                 </section>
 
                 <section 

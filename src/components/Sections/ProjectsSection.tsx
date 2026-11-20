@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 import type { Project, ProjectsCarouselProps } from "@/types/projects.ts";
+import { projectsData } from "@/data/projects.ts";
 import ProjectSlide from "@/components/ui/ProjectSlide.tsx";
 
 const slideVariants = {
@@ -15,77 +17,16 @@ const slideVariants = {
     }),
 };
 
-const projects: Project[] = [
-    {
-        title: "Minecraft EpicKingdom Manager",
-        description: "a minecraft plugin for managing extensions",
-        longDescription: "I am building a Minecraft plugin called EpicKingdom using Java and the Paper API. This plugin is designed for managing kingdoms and adding kingdom content in an easy manor where you don't have to repeat yourself",
-        technologies: [
-            { name: "Java", icon: "Coffee", color: "30 85% 45%" },
-            { name: "SQL", icon: "Database", color: "210 90% 42%" },
-            { name: "Pterodactyl", icon: "Server", color: "170 65% 40%" },
-        ],
-        badge: [
-            { text: "Work in progress", backgroundColor: "hsl(30 100% 50% / 0.75)", textColor: "hsl(0 0% 100%)" },
-            { text: "V.0.4.0", backgroundColor: "hsl(0 0% 100% / 0.75)", textColor: "hsl(220 15% 20%)" },
-        ],
-        image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
-    },
-    {
-        title: "My-CV",
-        description: "My personal CV website",
-        longDescription: "Developed a personal CV website using React, Tailwind CSS, and Vite.js. The site features a clean, responsive design and showcases my skills, projects, and experience effectively.",
-        technologies: [
-            { name: "React", icon: "Atom", color: "190 90% 62%" },
-            { name: "HTML", icon: "Code", color: "14 78% 52%" },
-            { name: "Tailwind", icon: "FlaskConical", color: "174 57% 47%" },
-            { name: "Vite.js", icon: "Triangle", color: "245 70% 60%" },
-            { name: "TypeScript", icon: "Code", color: "210 68% 46%" },
-        ],
-        badge: [
-            { text: "Live", backgroundColor: "hsl(140 100% 40% / 0.75)", textColor: "hsl(0 0% 100%)" },
-            { text: "V.1.0.0", backgroundColor: "hsl(0 0% 100% / 0.75)", textColor: "hsl(220 15% 20%)" }
-        ],
-        image: "images/cv-website.png",
-        githubUrl: "https://github.com/Damijongerius/CV",
-    },
-    {
-        title: "MediaBase",
-        description: "My webProject for storing all familly images",
-        longDescription: "MediaBase is a web application designed to store and manage family photos and videos. Built with Go for the backend and React for the frontend, it offers features like face recognition, easy organization, and secure storage using Postgres and Docker on a Raspberry Pi server.",
-        technologies: [
-            { name: "Go", icon: "Hexagon", color: "197 78% 45%" },
-            { name: "React", icon: "Atom", color: "200 92% 56%" },
-            { name: "Face-Recognition", icon: "Brain", color: "260 60% 58%" },
-            { name: "Postgress", icon: "Database", color: "210 90% 40%" },
-            { name: "Docker", icon: "Container", color: "198 95% 37%" },
-            { name: "Raspberry-PI", icon: "Grape", color: "344 65% 45%" },
-        ],
-        badge: [
-            { text: "Work in progress", backgroundColor: "hsl(30 100% 50% / 0.75)", textColor: "hsl(0 0% 100%)" },
-            { text: "V.0.2.1", backgroundColor: "hsl(0 0% 100% / 0.75)", textColor: "hsl(220 15% 20%)" }
-        ],
-        image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=600&fit=crop",
-    },
-    {
-        title: "HU Planner",
-        description: "A Planner for projects implementing HBO-I standards",
-        longDescription: "HU Planner is a project management tool tailored for HBO-I standards, developed using React and Go. It features task tracking, team collaboration, and progress visualization to streamline project workflows in educational settings.",
-        technologies: [
-            { name: "Go", icon: "Hexagon", color: "197 78% 45%" },
-            { name: "React", icon: "Atom", color: "200 92% 56%" },
-            { name: "SQLite", icon: "Database", color: "210 90% 42%" },
-        ],
-        badge: [
-            { text: "Work in progress", backgroundColor: "hsl(30 100% 50% / 0.75)", textColor: "hsl(0 0% 100%)" },
-            { text: "V.0.1.5", backgroundColor: "hsl(0 0% 100% / 0.75)", textColor: "hsl(220 15% 20%)" }
-        ],
-        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop",
-    }
-];
+const projects: Project[] = projectsData;
 
 export default function ProjectsSection({ autoSlideInterval = 15000 }: ProjectsCarouselProps) {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const location = useLocation();
+    // When coming back from a project page, reopen the carousel on that project
+    const [currentIndex, setCurrentIndex] = useState(() => {
+        const slug = (location.state as { projectSlug?: string } | null)?.projectSlug;
+        const idx = slug ? projects.findIndex((p) => p.slug === slug) : -1;
+        return idx >= 0 ? idx : 0;
+    });
     const [direction, setDirection] = useState(0);
     const [imageIndex, setImageIndex] = useState(0);
 
