@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- All asset paths in the app are relative; this keeps them working on /projects/... pages -->
+    <base href="/" />
+    <style>html,body{background:#020617;color:#e2e8f0;font-family:system-ui,sans-serif}#root .prerender{max-width:46rem;margin:0 auto;padding:2rem 1rem}#root .prerender a{color:#a5b4fc}</style>
+    <title>NDW Data Collector – project &amp; dev log | Damiano Jongerius</title>
+    <meta name="description" content="A data collector that gathers Dutch &amp; Belgian traffic, weather and event data to hunt for correlations. Not an actual scraper: it just sends requests to…" />
+    <meta name="author" content="Damiano Jongerius" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://dami.jongerius.app/projects/ndw-data-scraping/" />
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dami Jongerius" />
+    <meta property="og:title" content="NDW Data Collector – project &amp; dev log | Damiano Jongerius" />
+    <meta property="og:description" content="A data collector that gathers Dutch &amp; Belgian traffic, weather and event data to hunt for correlations. Not an actual scraper: it just sends requests to…" />
+    <meta property="og:url" content="https://dami.jongerius.app/projects/ndw-data-scraping/" />
+    <meta property="og:image" content="https://dami.jongerius.app/images/projects/ndw-map.webp" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="NDW Data Collector – project &amp; dev log | Damiano Jongerius" />
+    <meta name="twitter:description" content="A data collector that gathers Dutch &amp; Belgian traffic, weather and event data to hunt for correlations. Not an actual scraper: it just sends requests to…" />
+    <meta name="twitter:image" content="https://dami.jongerius.app/images/projects/ndw-map.webp" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Damiano Jongerius",
+        "alternateName": "Dami Jongerius",
+        "url": "https://dami.jongerius.app/",
+        "image": "https://dami.jongerius.app/dami.jpg",
+        "jobTitle": "Software developer",
+        "sameAs": ["https://github.com/Damijongerius"]
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-L0GZssYS.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dzg2AxKD.css">
+  </head>
+
+  <body>
+    <div id="root"><div class="prerender"><h1>NDW Data Collector</h1>
+<p>A data collector that gathers Dutch &amp; Belgian traffic, weather and event data to hunt for correlations</p>
+<p>Not an actual scraper: it just sends requests to the open API of the Nationaal Dataportaal Wegverkeer (NDW). Alongside the Dutch traffic data I'm collecting some Belgian road services and a weather API, and eventually events, because those can have fun correlations. It's been running for about 20 days and I'm waiting for a ton of data so I can look for correlations over longer periods.</p>
+<p>I've always wanted to do something like this but never really found the time. Now it's been running for about 20 days, and I'm just waiting for it to collect a ton of data so I can look for correlations over longer periods.</p><p>I obviously don't have 10 years of data. If someone does, let me know — I would love to take a crack at it!</p>
+<h2>Goal</h2><p>No big plan — it's for fun. Collect the data first, then find out what correlations show up between traffic, weather, Belgian road services and eventually events.</p>
+<h2>Features</h2><ul><li>Requests to the NDW open API (the Dutch traffic data)</li><li>Some Belgian road services</li><li>A weather API</li><li>Events, eventually — they can have fun correlations</li><li>Compact storage: sorted per day, roughly 1 GB per day (500 MB compressed)</li><li>A live map explorer with layers for speeds, measures, road works, truck parkings and charging points</li><li>Runs as a collector and a cleaner on my Pantheon panel</li></ul>
+<h2>How it's built</h2><p>Collectors call the APIs on a schedule and a cleaner process shrinks the raw data into a compact format sorted per day, stored on a hard drive. A separate application reads the data out for the dashboards and map.</p>
+<h2>Roadmap</h2><ul><li>Wait for a lot more data, then search for longer-period correlations</li><li>Add events as a data source</li><li>Compress the data even further</li></ul>
+<h2>Dev log</h2><h3>From 15 GB to 1 GB per day</h3><p><small>2026-11-18 · problem</small></p><p>I thought just collecting everything on my Pi and eventually moving it to my computer would go totally fine. Nothing could go wrong... 18 days of data in, I already had hundreds of gigabytes.</p><p>It was my own fault. I hadn't really looked at the data yet: I had let Claude Code build a dashboard and quickly made an application to read all the data out and store it sorted per day. And I'm lucky I checked now and not 30 days later, because I wasn't going to look at it otherwise.</p><p>200 GB was already there, on a slow HDD. Downloading it took hours and I thought: it can't be that much, right? It turned out to be bad data. I made sure all the invalid fields were dropped, and since there's a static set of names for specific sensors, I saved those apart and linked them to an id, so the numbers got super small.</p><p>Result: from about 15 GB per day to about 1 GB per day, which makes it possible to let this run for years. Compression takes it to 500 MB.</p><h3>How I shrank the data</h3><p><small>2026-11-18 · solution</small></p><p>I'll probably be able to compress it even further if I take some more looks. For now I did the following:</p><p>• Data that gave back zero can go — I'll know by it not being there</p><p>• Values with a limited set of states (like &quot;true|false&quot; or some other name) are bound to a number</p><p>• Dates were sometimes in every item; I define the time once and nest items under it, or again use a number</p><p>• It becomes humanly unreadable, but that's what dashboards are for...</p><p>• All variables are renamed to the shortest possible version (time becomes t) and a static file defines all the short names with the full word and a description, so I still know what they mean in a few years</p><p>I really like numbers, don't I.</p><h3>Collecting NDW data for fun</h3><p><small>2026-11-01 · milestone</small></p><p>The collector is running: Dutch NDW traffic data, some Belgian road services and a weather API, with events as a possible next source because those could give fun correlations.</p><p>Now I wait for the data to pile up.</p>
+<p><a href="/">Back to Damiano Jongerius</a></p></div></div>
+    <noscript>
+      Damiano (Dami) Jongerius – software developer focused on AI and data. This site needs JavaScript to show
+      his CV, projects and dev log.
+    </noscript>
+  </body>
+</html>

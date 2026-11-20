@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- All asset paths in the app are relative; this keeps them working on /projects/... pages -->
+    <base href="/" />
+    <style>html,body{background:#020617;color:#e2e8f0;font-family:system-ui,sans-serif}#root .prerender{max-width:46rem;margin:0 auto;padding:2rem 1rem}#root .prerender a{color:#a5b4fc}</style>
+    <title>MediaBase – project &amp; dev log | Damiano Jongerius</title>
+    <meta name="description" content="A safe, self-hosted home for my family's photos, videos and files. MediaBase is the project I've been stalling the longest. The idea: give my family a…" />
+    <meta name="author" content="Damiano Jongerius" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://dami.jongerius.app/projects/mediabase/" />
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dami Jongerius" />
+    <meta property="og:title" content="MediaBase – project &amp; dev log | Damiano Jongerius" />
+    <meta property="og:description" content="A safe, self-hosted home for my family's photos, videos and files. MediaBase is the project I've been stalling the longest. The idea: give my family a…" />
+    <meta property="og:url" content="https://dami.jongerius.app/projects/mediabase/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&amp;h=600&amp;fit=crop" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="MediaBase – project &amp; dev log | Damiano Jongerius" />
+    <meta name="twitter:description" content="A safe, self-hosted home for my family's photos, videos and files. MediaBase is the project I've been stalling the longest. The idea: give my family a…" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&amp;h=600&amp;fit=crop" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Damiano Jongerius",
+        "alternateName": "Dami Jongerius",
+        "url": "https://dami.jongerius.app/",
+        "image": "https://dami.jongerius.app/dami.jpg",
+        "jobTitle": "Software developer",
+        "sameAs": ["https://github.com/Damijongerius"]
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-L0GZssYS.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dzg2AxKD.css">
+  </head>
+
+  <body>
+    <div id="root"><div class="prerender"><h1>MediaBase</h1>
+<p>A safe, self-hosted home for my family's photos, videos and files</p>
+<p>MediaBase is the project I've been stalling the longest. The idea: give my family a secure way to store pictures and videos of our family, plus personal files, on a server I manage myself. It's built with Go and React and runs in Docker on a Raspberry Pi, and the big next step (nostalgia and face tagging) is waiting on storage.</p>
+<p>MediaBase is a project I've been stalling for the longest time ever. About a year ago I wanted to give my family a secure way to store pictures of our family, and to store personal files safely, on something I would manage myself.</p><p>I built the first version before AI, and I think it looked pretty fun: I took inspiration from a spinning animation with rings that I thought looked cool — and it did.</p><p>Then hard drive prices went to Tokyo. I never had the guts to buy the 8 TB drives, and looking back at it now: what a fool I have been. So the next time the opportunity presents itself, I won't hesitate.</p>
+<h2>Goal</h2><p>A place where everyone stores their pictures and videos so everyone can look back on them in a fun way — and where my family can get their memories out of Snapchat+, where all their endless snap photos and videos are stored right now.</p>
+<h2>Features</h2><ul><li>Secure, private storage for family photos, videos and personal files</li><li>Go backend with a React frontend, PostgreSQL and Docker, running on a Raspberry Pi</li><li>A first version with an animated look, built before AI</li><li>Planned: nostalgia features and tagging by faces and people, using my data and AI skills</li><li>Planned: a way for family members to move their photos and videos out of Snapchat+</li><li>Planned: also work as a Plex server, with an NVMe drive for fast copies so 4K can be rendered without bottlenecking the hard drives</li></ul>
+<h2>How it's built</h2><p>A Go backend serves a React frontend and stores media metadata in PostgreSQL. Everything runs in containers on a home server (a Raspberry Pi for now). For the bigger plan, two 8 TB hard drives hold the media and an NVMe drive caches copies for fast playback.</p>
+<h2>Roadmap</h2><ul><li>Buy 2x 8 TB hard drives when the time is right</li><li>Face and people tagging, and nostalgia views</li><li>Help family members leave Snapchat+ by importing their media</li><li>Plex-style streaming, with an NVMe cache for smooth 4K</li></ul>
+<h2>Dev log</h2><h3>Why MediaBase is on hold</h3><p><small>2026-11-20 · problem</small></p><p>The honest reason: storage. A year ago hard drive prices went through the roof and I never had the guts to buy the two 8 TB drives this project needs. Face recognition and a real family archive can only happen with that space.</p><p>I'm using a hard drive for my NDW data right now, but that's a single 4 TB Xbox Seagate that I turned into a normal drive after selling my Xbox. It's temporary and not something I'd trust family memories to.</p><p>So it waits. When the right opportunity shows up, I won't hesitate.</p><h3>The plan once the drives arrive</h3><p><small>2026-11-20 · update</small></p><p>• Tag photos by faces and people, and use my data and AI skills to make looking back feel nostalgic</p><p>• Help some family members get rid of Snapchat+, since everything they have is stored there</p><p>• Use it as a Plex server too, with an NVMe drive for fast copies so things can be rendered at 4K without bottlenecking the drives</p>
+<p><a href="/">Back to Damiano Jongerius</a></p></div></div>
+    <noscript>
+      Damiano (Dami) Jongerius – software developer focused on AI and data. This site needs JavaScript to show
+      his CV, projects and dev log.
+    </noscript>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- All asset paths in the app are relative; this keeps them working on /projects/... pages -->
+    <base href="/" />
+    <style>html,body{background:#020617;color:#e2e8f0;font-family:system-ui,sans-serif}#root .prerender{max-width:46rem;margin:0 auto;padding:2rem 1rem}#root .prerender a{color:#a5b4fc}</style>
+    <title>Nexora – project &amp; dev log | Damiano Jongerius</title>
+    <meta name="description" content="Minecraft server list with live player counts and an in-game mod. Nexora is a Minecraft server list built around honest data: live player counts from my…" />
+    <meta name="author" content="Damiano Jongerius" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://dami.jongerius.app/projects/nexora/" />
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dami Jongerius" />
+    <meta property="og:title" content="Nexora – project &amp; dev log | Damiano Jongerius" />
+    <meta property="og:description" content="Minecraft server list with live player counts and an in-game mod. Nexora is a Minecraft server list built around honest data: live player counts from my…" />
+    <meta property="og:url" content="https://dami.jongerius.app/projects/nexora/" />
+    <meta property="og:image" content="https://dami.jongerius.app/images/projects/nexora.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Nexora – project &amp; dev log | Damiano Jongerius" />
+    <meta name="twitter:description" content="Minecraft server list with live player counts and an in-game mod. Nexora is a Minecraft server list built around honest data: live player counts from my…" />
+    <meta name="twitter:image" content="https://dami.jongerius.app/images/projects/nexora.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Damiano Jongerius",
+        "alternateName": "Dami Jongerius",
+        "url": "https://dami.jongerius.app/",
+        "image": "https://dami.jongerius.app/dami.jpg",
+        "jobTitle": "Software developer",
+        "sameAs": ["https://github.com/Damijongerius"]
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-L0GZssYS.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dzg2AxKD.css">
+  </head>
+
+  <body>
+    <div id="root"><div class="prerender"><h1>Nexora</h1>
+<p>Minecraft server list with live player counts and an in-game mod</p>
+<p>Nexora is a Minecraft server list built around honest data: live player counts from my own scanner, no server botting, no cracked servers, and smart filters so you can actually find your next grind session. A Fabric mod lets players browse and join servers without leaving Minecraft.</p>
+<p>This started as a question with a friend: &quot;why don't we just have a server browser in Minecraft? Just like in Roblox.&quot; My first reaction was that I didn't even know if it was possible.</p><p>So I asked my friend Claude to check it out, and in 20 minutes it had built a mod. That was the moment I thought: oh, this is interesting — and it actually looks pretty good.</p><p>I went looking for other mods that did the same and found one, but it was just a normal, super long list of thousands of servers, cracked and not cracked. That's when I started cooking up ideas. I prompted most of it together in a few hours and fine-tuned it over the following days.</p><p>The website is the first thing people see, so I wanted a clear UI with a little Minecraft feel — that's why the first thing you see is a Minecraft-inspired world.</p>
+<h2>Goal</h2><p>Make finding a Minecraft server as easy as a server browser in Roblox — without botted player counts, without cracked servers and without a never-ending list. Players get a clean list they can trust, and servers that play fair get found.</p>
+<h2>Features</h2><ul><li>Live player counts from my own scanner (hundreds of servers, ~90k players tracked)</li><li>No server botting and no cracked servers — cracked servers fall off immediately</li><li>Servers under 20 players are never shown, to protect players and private servers</li><li>Search by name, address or MOTD with smart filters</li><li>Server analytics and history</li><li>Fabric mod (1.21.11 – 26.3) to browse and join servers in-game</li><li>Microsoft login (Minecraft account linking is in progress)</li></ul>
+<h2>How it's built</h2><p>A slow, rate-limited scanner collects player counts, MOTDs and versions. That data feeds the website (discover, servers and analytics pages) and the in-game Fabric mod, which shows the same list inside Minecraft. Login goes through Microsoft auth.</p>
+<h2>Roadmap</h2><ul><li>Link Microsoft login to Minecraft, so a logged-in user shows their Minecraft name instead of their real name</li><li>Anonymously link each mod client to an account — and find a way to verify the client isn't cracked</li><li>Show users exactly which data we have on them, with one-click delete (and an in-game opt-in for saving data at all)</li><li>More filters and server categories</li></ul>
+<h2>Dev log</h2><h3>Microsoft login, and a privacy-first plan</h3><p><small>2026-11-19 · update</small></p><p>I got a Microsoft auth key, so you can now log in with Microsoft. The next step is Minecraft: when you log in, we can show your Minecraft credentials instead of your real name, and use an anonymous link to know which client with the mod is connected to which account.</p><p>The open question is how to verify the Minecraft client isn't cracked.</p><p>The only thing this will do is show you what data we have on you, so you can delete it with one click. The mod will also ask in-game whether you want your data saved at all — otherwise there is nothing except the requests to the server for the server list.</p><p>I also want to protect players and private servers, so servers under 20 players will never be shown, and cracked servers fall off immediately.</p><h3>Nexora goes live (and gets indexed)</h3><p><small>2026-11-12 · milestone</small></p><p>Seven days ago I put the website online and bought a domain. I also logged into Google Search Console to get my pages indexed, so at least when you search for Nexora mod, this is the first thing you find.</p><h3>Why I scan instead of botting</h3><p><small>2026-11-05 · problem</small></p><p>To get live player counts I could have used a Minecraft bot to join and check on servers. I felt like that was wrong to do, so I researched a little and found I could scan servers instead.</p><p>The risk: my home internet provider might not like it and shut down the wifi. Sorry mom, I took that risk. I set the scanner to run very slowly so it wouldn't happen fast, and hoped for the best.</p><p>It's still a much better approach than actual botting.</p><h3>The idea: a server browser inside Minecraft</h3><p><small>2026-10-28 · milestone</small></p><p>A friend and I asked: why don't we have a server browser in Minecraft, just like in Roblox? I didn't know if it was possible, so I let Claude check — and in 20 minutes there was a working mod.</p><p>After finding another mod that was just a huge list of every server, I decided to make something different: a trustworthy list with a clean UI and a Minecraft feel.</p>
+<p><a href="/">Back to Damiano Jongerius</a></p></div></div>
+    <noscript>
+      Damiano (Dami) Jongerius – software developer focused on AI and data. This site needs JavaScript to show
+      his CV, projects and dev log.
+    </noscript>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- All asset paths in the app are relative; this keeps them working on /projects/... pages -->
+    <base href="/" />
+    <style>html,body{background:#020617;color:#e2e8f0;font-family:system-ui,sans-serif}#root .prerender{max-width:46rem;margin:0 auto;padding:2rem 1rem}#root .prerender a{color:#a5b4fc}</style>
+    <title>Pantheon Panel – project &amp; dev log | Damiano Jongerius</title>
+    <meta name="description" content="My own server panel for building and running Minecraft server networks. Pantheon Panel is a self-built server management panel, inspired by Pterodactyl…" />
+    <meta name="author" content="Damiano Jongerius" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://dami.jongerius.app/projects/pantheon-panel/" />
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dami Jongerius" />
+    <meta property="og:title" content="Pantheon Panel – project &amp; dev log | Damiano Jongerius" />
+    <meta property="og:description" content="My own server panel for building and running Minecraft server networks. Pantheon Panel is a self-built server management panel, inspired by Pterodactyl…" />
+    <meta property="og:url" content="https://dami.jongerius.app/projects/pantheon-panel/" />
+    <meta property="og:image" content="https://dami.jongerius.app/images/projects/pantheon-dashboard.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Pantheon Panel – project &amp; dev log | Damiano Jongerius" />
+    <meta name="twitter:description" content="My own server panel for building and running Minecraft server networks. Pantheon Panel is a self-built server management panel, inspired by Pterodactyl…" />
+    <meta name="twitter:image" content="https://dami.jongerius.app/images/projects/pantheon-dashboard.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Damiano Jongerius",
+        "alternateName": "Dami Jongerius",
+        "url": "https://dami.jongerius.app/",
+        "image": "https://dami.jongerius.app/dami.jpg",
+        "jobTitle": "Software developer",
+        "sameAs": ["https://github.com/Damijongerius"]
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-L0GZssYS.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dzg2AxKD.css">
+  </head>
+
+  <body>
+    <div id="root"><div class="prerender"><h1>Pantheon Panel</h1>
+<p>My own server panel for building and running Minecraft server networks</p>
+<p>Pantheon Panel is a self-built server management panel, inspired by Pterodactyl but made for the way I actually work: spinning Minecraft servers up and dropping them whenever I want. Projects, blueprints, a key vault and custom dashboards keep everything in one web app that both I and an AI can manage.</p>
+<p>I got the inspiration from Pterodactyl, a panel made for server hosts who sell servers to other people, who then get their own instance nodes. We used a whole dedicated server ourselves with Pterodactyl, and I kept getting annoyed with how it felt and how we used it compared to what it was made for.</p><p>We wanted to spin up Minecraft servers and drop them whenever — and in Pterodactyl that doesn't look very pretty. I could have listed a massive amount of pain points.</p><p>I could also have just used Docker and a terminal. But would I really be in IT if I just used the terminal of the dedicated server? So I made it the way I felt would be super useful to me — and for AI to add the things I need.</p>
+<h2>Goal</h2><p>A panel for people who actually want to build a Minecraft server network: spin servers up and drop them whenever, keep everything in one place, and let an AI help manage it.</p>
+<h2>Features</h2><ul><li>Projects: I have a lot of ideas and projects that sometimes need to talk to each other and sometimes don't — each project is its own network</li><li>Private by default: Pterodactyl pushes every container to a public IP unless told otherwise. Pantheon is the other way around — only what has to be public is public, and even then it isn't forwarded in the firewall</li><li>Key Vault: secrets aren't all sitting in one place where one web hack gets everything</li><li>Blueprints: reusable containers (an AI can make one) so I can stay in the web app and see broader statistics</li><li>Custom UI elements per blueprint — e.g. my scaler service that scales Minecraft servers shows what it's doing, and why, on the server page</li><li>Dashboards, nodes, backups, users &amp; access and API keys</li><li>MCP / API keys so Claude can set things up — managing a whole server cluster in 5 minutes</li></ul>
+<h2>How it's built</h2><p>Mythos daemons run on the nodes and start the containers. Servers are deployed from blueprints into projects, each with its own network, and a Velocity gateway exposes only what has to be public. Blueprints can ship their own UI that reads a service out, like the scaler.</p>
+<h2>Roadmap</h2><ul><li>Publish it in the future (I won't recommend anyone to use it yet — I don't fully trust it)</li><li>Ready-made blueprints, like custom Minestom lobbies</li><li>Easily link a few VPSs into one panel</li></ul>
+<h2>Dev log</h2><h3>Why I built my own panel</h3><p><small>2026-11-19 · milestone</small></p><p>Pterodactyl never felt right for how we used it, so I built Pantheon around projects, private-by-default networking, a key vault and blueprints.</p><p>The goal: creating a server network has never been easier. Buy a few VPSs, link them into one panel with a few commands, use the scaler service, and run what you want to run — I even have some custom Minestom lobby blueprints. Now anyone in the world can play on your server.</p><p>And if you're too lazy to do the settings: create an API key, give it to Claude, and he'll do it for you in 5 minutes.</p><h3>Private by default, vault for secrets</h3><p><small>2026-11-19 · update</small></p><p>Pterodactyl pushes every container to a public IP unless you say otherwise. I switched it around: only when something has to be public is it public, and then it's not even forwarded in the firewall, because I'm not crazy.</p><p>I also added a key vault, because in Pterodactyl all the passwords just live in one place — one web hack and everything is gone. A little extra layer to make it safer.</p>
+<p><a href="/">Back to Damiano Jongerius</a></p></div></div>
+    <noscript>
+      Damiano (Dami) Jongerius – software developer focused on AI and data. This site needs JavaScript to show
+      his CV, projects and dev log.
+    </noscript>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- All asset paths in the app are relative; this keeps them working on /projects/... pages -->
+    <base href="/" />
+    <style>html,body{background:#020617;color:#e2e8f0;font-family:system-ui,sans-serif}#root .prerender{max-width:46rem;margin:0 auto;padding:2rem 1rem}#root .prerender a{color:#a5b4fc}</style>
+    <title>Minecraft EpicKingdom Manager – project &amp; dev log | Damiano Jongerius</title>
+    <meta name="description" content="A modular core plugin that turns one Minecraft gamemode into swappable extensions. EpicKingdom is the core of a custom Minecraft kingdom gamemode I build…" />
+    <meta name="author" content="Damiano Jongerius" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://dami.jongerius.app/projects/epickingdom/" />
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dami Jongerius" />
+    <meta property="og:title" content="Minecraft EpicKingdom Manager – project &amp; dev log | Damiano Jongerius" />
+    <meta property="og:description" content="A modular core plugin that turns one Minecraft gamemode into swappable extensions. EpicKingdom is the core of a custom Minecraft kingdom gamemode I build…" />
+    <meta property="og:url" content="https://dami.jongerius.app/projects/epickingdom/" />
+    <meta property="og:image" content="https://dami.jongerius.app/images/projects/epickingdom-map.webp" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Minecraft EpicKingdom Manager – project &amp; dev log | Damiano Jongerius" />
+    <meta name="twitter:description" content="A modular core plugin that turns one Minecraft gamemode into swappable extensions. EpicKingdom is the core of a custom Minecraft kingdom gamemode I build…" />
+    <meta name="twitter:image" content="https://dami.jongerius.app/images/projects/epickingdom-map.webp" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Damiano Jongerius",
+        "alternateName": "Dami Jongerius",
+        "url": "https://dami.jongerius.app/",
+        "image": "https://dami.jongerius.app/dami.jpg",
+        "jobTitle": "Software developer",
+        "sameAs": ["https://github.com/Damijongerius"]
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-L0GZssYS.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dzg2AxKD.css">
+  </head>
+
+  <body>
+    <div id="root"><div class="prerender"><h1>Minecraft EpicKingdom Manager</h1>
+<p>A modular core plugin that turns one Minecraft gamemode into swappable extensions</p>
+<p>EpicKingdom is the core of a custom Minecraft kingdom gamemode I build with CrownForge. Instead of 20 separate plugins cluttering the plugins folder, everything lives in one contained plugin that loads gameplay features as extensions. Because features change a lot with this kingdom idea, almost everything is built on interfaces so it can be replaced without breaking the rest.</p>
+<p>The goal was to make the custom gamemode more contained in its own plugin, instead of trashing the plugins folder with 20 plugins that each do a different task.</p><p>The second goal was making it easy to switch features out, because those change often with this idea of a kingdom we are making. For example, we have had square regions and custom-shaped regions, and we have used different web tools for them. If something was already made once, we can save it and start something new and expect 90% to still work, because it was anticipated and built on interfaces so anything can be replaced easily.</p><p>This project shows my deep understanding of Java, down to the level of abstraction, encapsulation and so on. And I wrote it because I had an AI subscription, which is crazy.</p><p>The source code stays private, so on this page you'll find the architecture instead.</p>
+<h2>Goal</h2><p>One contained plugin for the whole gamemode, where every feature is an extension that can be swapped, rewritten or dropped without touching the rest.</p>
+<h2>Features</h2><ul><li>Extension system: each extension is its own JAR, loaded in its own isolated class loader</li><li>Annotation-driven managers with automatic discovery, injection and lifecycle hooks</li><li>Interfaces everywhere, so implementations can be replaced without changing the code that uses them</li><li>Three ways for extensions to talk: core managers, a type-safe cross-extension API, and a loose map-based API</li><li>Permission sync that calculates what changed since the last session and updates LuckPerms automatically</li><li>Custom events for every important kingdom action</li><li>Kingdom chat with channels, plus cross-server support through Velocity</li><li>Integrations with WorldGuard, PlaceholderAPI, LuckPerms and TAB</li><li>Folia-ready scheduling</li></ul>
+<h2>How it's built</h2><p>A small core owns the extension runtime (loading, dependency resolution, injection, lifecycle) and exposes managers as interfaces. Gameplay features are extensions on top. Layers only talk downward through interfaces, which is what makes parts swappable.</p>
+<h2>Roadmap</h2><ul><li>Keep growing the extension library as the kingdom concept evolves</li><li>Publish more of the architecture documentation</li></ul>
+<h2>Dev log</h2><h3>One plugin instead of twenty</h3><p><small>2026-11-20 · milestone</small></p><p>The goal of EpicKingdom: make the custom gamemode contained in its own plugin instead of trashing the plugins folder with 20 plugins that each do a different task.</p><p>It also had to be easy to switch features out, because those change often with the kingdom idea. We have had square regions, custom-shaped regions and different web tools. Because everything is built against interfaces, I can save what was made, start a new thing and still expect 90% to work.</p>
+<p><a href="/">Back to Damiano Jongerius</a></p></div></div>
+    <noscript>
+      Damiano (Dami) Jongerius – software developer focused on AI and data. This site needs JavaScript to show
+      his CV, projects and dev log.
+    </noscript>
+  </body>
+</html>

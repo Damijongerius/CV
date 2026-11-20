@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- All asset paths in the app are relative; this keeps them working on /projects/... pages -->
+    <base href="/" />
+    <style>html,body{background:#020617;color:#e2e8f0;font-family:system-ui,sans-serif}#root .prerender{max-width:46rem;margin:0 auto;padding:2rem 1rem}#root .prerender a{color:#a5b4fc}</style>
+    <title>Personal CV &amp; About Me Platform – project &amp; dev log | Damiano Jongerius</title>
+    <meta name="description" content="This website: a CV that doubles as a portfolio and a dev log. The site you're looking at. It started as a CV and grew into a personal hub: a scrolling…" />
+    <meta name="author" content="Damiano Jongerius" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://dami.jongerius.app/projects/cv-website/" />
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dami Jongerius" />
+    <meta property="og:title" content="Personal CV &amp; About Me Platform – project &amp; dev log | Damiano Jongerius" />
+    <meta property="og:description" content="This website: a CV that doubles as a portfolio and a dev log. The site you're looking at. It started as a CV and grew into a personal hub: a scrolling…" />
+    <meta property="og:url" content="https://dami.jongerius.app/projects/cv-website/" />
+    <meta property="og:image" content="https://dami.jongerius.app/images/cv-website.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Personal CV &amp; About Me Platform – project &amp; dev log | Damiano Jongerius" />
+    <meta name="twitter:description" content="This website: a CV that doubles as a portfolio and a dev log. The site you're looking at. It started as a CV and grew into a personal hub: a scrolling…" />
+    <meta name="twitter:image" content="https://dami.jongerius.app/images/cv-website.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Damiano Jongerius",
+        "alternateName": "Dami Jongerius",
+        "url": "https://dami.jongerius.app/",
+        "image": "https://dami.jongerius.app/dami.jpg",
+        "jobTitle": "Software developer",
+        "sameAs": ["https://github.com/Damijongerius"]
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-L0GZssYS.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dzg2AxKD.css">
+  </head>
+
+  <body>
+    <div id="root"><div class="prerender"><h1>Personal CV &amp; About Me Platform</h1>
+<p>This website: a CV that doubles as a portfolio and a dev log</p>
+<p>The site you're looking at. It started as a CV and grew into a personal hub: a scrolling one-page overview of who I am, with its own pages for every work experience and every project, including a dev log where I post updates and the problems I ran into.</p>
+<p>A normal CV is a PDF that says what you did. I wanted something that shows it: who I am, the work I've done, what I'm studying, and the projects I'm building, including the ones that failed or are still stuck.</p><p>The home page is one scrolling story with a section per theme: About Me, Work Experience, Academics, Projects and Contact. Each experience and each project then opens its own page with the longer, honest version — what I did, what I learned, what I could have done better, and for projects a dev log with the problems I ran into.</p><p>Everything on the site is data-driven. To add a project, an experience or a dev-log post I edit a single data file and the pages, carousel and timelines update by themselves.</p>
+<h2>Goal</h2><p>A CV that shows the real picture, including failures and lessons, and that grows with me: every project gets a page and a dev log where I post updates and problems.</p>
+<h2>Features</h2><ul><li>One-page scrolling overview with snap sections and a section navigator</li><li>Timeline sections for Work Experience, Academics and About Me, with future ambitions marked</li><li>Detail page for every work experience: what I did, my focus, what I learned and what I could do better, with photos or a company website preview</li><li>Projects carousel with swipe, image galleries and links to every project</li><li>Project pages with the story, goal, features, roadmap, an architecture graph and a dev log you can filter by update, problem, solution and milestone</li><li>Interactive architecture diagram for projects whose source code stays private</li><li>Downloadable PDF CV and contact links</li><li>Responsive layout and animations with Framer Motion</li><li>Content lives in data files, so adding things doesn't need new components</li></ul>
+<h2>How it's built</h2><p>A React and TypeScript single-page app built with Vite and styled with Tailwind CSS. Routes are handled with a hash router so it can be hosted as static files on GitHub Pages. Experiences, academics and projects (including their dev-log posts) come from typed data files that the pages render.</p>
+<h2>Roadmap</h2><ul><li>Keep posting dev-log updates for every project</li><li>Add real screenshots and images for the projects that still use placeholders</li><li>Add more projects and experiences as they happen</li></ul>
+<h2>Dev log</h2><h3>Projects now have their own pages and a dev log</h3><p><small>2026-11-20 · update</small></p><p>Every project on this site can now be clicked to open its own page, with the story behind it, its features and roadmap, and a dev log where I post updates and the problems I run into.</p><p>I also added an interactive architecture graph, so projects with private source code, like EpicKingdom, still have something to show.</p><h3>Making the CV more honest</h3><p><small>2026-11-20 · update</small></p><p>I rewrote my Kaliber internship to tell what really happened: I tried to solve something (nearly) impossible and failed, and the lesson was worth more than a success would have been.</p><p>I also made the About Me section match the Experience and Academics sections, so the whole site feels like one thing.</p>
+<p><a href="/">Back to Damiano Jongerius</a></p></div></div>
+    <noscript>
+      Damiano (Dami) Jongerius – software developer focused on AI and data. This site needs JavaScript to show
+      his CV, projects and dev log.
+    </noscript>
+  </body>
+</html>
