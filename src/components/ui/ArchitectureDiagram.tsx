@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown, Repeat } from "lucide-react";
 import type { ProjectDiagram } from "@/types/projects.ts";
+import { track } from "@/lib/analytics.ts";
 
 /** Layered architecture graph. Click a node to read what it does. */
 export default function ArchitectureDiagram({ diagram }: { diagram: ProjectDiagram }) {
@@ -42,7 +43,10 @@ export default function ArchitectureDiagram({ diagram }: { diagram: ProjectDiagr
                                         return (
                                             <button
                                                 key={n.label}
-                                                onClick={() => setActive(isActive ? null : { layer: layer.id, label: n.label })}
+                                                onClick={() => {
+                                                    setActive(isActive ? null : { layer: layer.id, label: n.label });
+                                                    if (!isActive) track("diagram-node", { node: n.label });
+                                                }}
                                                 className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs sm:text-sm font-medium transition-all cursor-pointer ${
                                                     isActive ? "bg-white text-indigo-950 border-white" : "bg-black/25 text-white hover:bg-white/15"
                                                 } ${n.swappable && !isActive ? "border-dashed" : ""}`}

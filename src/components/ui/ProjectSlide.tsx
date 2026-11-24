@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { BookOpen } from "lucide-react";
+import { track } from "@/lib/analytics.ts";
 import ImageGallery from "./ImageGallery";
 import TechPill from "./TechPill";
 import ProjectLinks from "./ProjectLinks";
@@ -79,6 +80,7 @@ export default function ProjectSlide({ project, projectImages, imageIndex, setIm
                                 className="flex flex-wrap gap-4 mt-2">
                         <Link
                             to={`/projects/${project.slug}`}
+                            onClick={() => track("open-project", { project: project.slug })}
                             className="group relative flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-xl font-semibold shadow-lg shadow-accent/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
                         >
                             <BookOpen size={20} />

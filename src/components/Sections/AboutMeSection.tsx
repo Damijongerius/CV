@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import TimeLineItem from "@/components/ui/TimeLineItem.tsx";
+import { track } from "@/lib/analytics.ts";
 
 interface HobbyAlbum {
     id: string;
@@ -131,7 +132,7 @@ export default function AboutMeSection() {
 
                 <div className="flex items-center gap-6 text-sm">
                     <button
-                        onClick={() => setPage(0)}
+                        onClick={() => { setPage(0); track("about-tab", { tab: "mindset" }); }}
                         className={`pb-1 border-b-2 transition-colors cursor-pointer ${
                             page === 0 ? "text-white border-white font-semibold" : "text-sky-100/70 border-transparent hover:text-white"
                         }`}
@@ -139,7 +140,7 @@ export default function AboutMeSection() {
                         Mindset & AI
                     </button>
                     <button
-                        onClick={() => setPage(1)}
+                        onClick={() => { setPage(1); track("about-tab", { tab: "hobbies" }); }}
                         className={`pb-1 border-b-2 transition-colors cursor-pointer ${
                             page === 1 ? "text-white border-white font-semibold" : "text-sky-100/70 border-transparent hover:text-white"
                         }`}

@@ -16,6 +16,7 @@ import {
 import { projectsData } from "@/data/projects.ts";
 import TechPill from "@/components/ui/TechPill.tsx";
 import ArchitectureDiagram from "@/components/ui/ArchitectureDiagram.tsx";
+import { track } from "@/lib/analytics.ts";
 import type { ProjectPost, ProjectPostType } from "@/types/projects.ts";
 
 const postTypeMeta: Record<ProjectPostType, { label: string; icon: typeof Bug; className: string }> = {
@@ -320,7 +321,7 @@ export default function ProjectDetailPage() {
                                     {(["all", ...availableTypes] as Filter[]).map((f) => (
                                         <button
                                             key={f}
-                                            onClick={() => setFilter(f)}
+                                            onClick={() => { setFilter(f); track("devlog-filter", { project: project.slug, filter: f }); }}
                                             className={`px-3 py-1 rounded-full border transition-colors cursor-pointer ${filter === f ? "bg-white text-indigo-950 border-white font-semibold" : "border-white/25 text-purple-200 hover:bg-white/10"}`}
                                         >
                                             {f === "all" ? "All" : postTypeMeta[f].label}

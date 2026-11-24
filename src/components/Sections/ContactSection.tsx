@@ -1,6 +1,8 @@
 import React from "react";
 import type { ContactMethod } from "@/types/contact.ts";
 import ContactMethods from "@/components/ui/ContactMethods.tsx";
+import VisitReason from "@/components/ui/VisitReason.tsx";
+import { analyticsEnabled } from "@/lib/analytics.ts";
 
 export default function ContactSection() {
     const methods: ContactMethod[] = [
@@ -42,7 +44,15 @@ export default function ContactSection() {
 
             <div className="grid md:grid-cols-1 gap-10">
                 <ContactMethods methods={methods} />
+                <VisitReason />
             </div>
+
+            {analyticsEnabled && (
+                <p className="text-white/70 text-xs text-center mt-8">
+                    This site uses privacy-friendly analytics without cookies: I only see anonymous totals like page views and
+                    clicks, never who you are.
+                </p>
+            )}
         </div>
     );
 }
