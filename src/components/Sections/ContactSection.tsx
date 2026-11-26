@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import type { ContactMethod } from "@/types/contact.ts";
 import ContactMethods from "@/components/ui/ContactMethods.tsx";
 import VisitReason from "@/components/ui/VisitReason.tsx";
@@ -46,6 +48,20 @@ export default function ContactSection() {
                 <ContactMethods methods={methods} />
                 <VisitReason />
             </div>
+
+            <Link
+                to="/opportunities"
+                className="group mt-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl bg-black/20 border border-white/20 px-6 py-5 text-white backdrop-blur-sm transition hover:bg-black/30 hover:-translate-y-0.5"
+            >
+                <span>
+                    <span className="block font-semibold text-lg">Run a small business in the Utrecht region?</span>
+                    <span className="block text-sm text-white/80">I help automate the manual work: orders, stock, invoices and spreadsheets.</span>
+                </span>
+                <span className="inline-flex items-center gap-2 font-semibold whitespace-nowrap">
+                    See how I can help
+                    <ArrowRight size={18} className="transition group-hover:translate-x-1" />
+                </span>
+            </Link>
 
             {analyticsEnabled && (
                 <p className="text-white/70 text-xs text-center mt-8">

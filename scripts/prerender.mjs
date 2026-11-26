@@ -130,6 +130,37 @@ ${posts ? `<h2>Dev log</h2>${posts}` : ""}
     });
 }
 
+// --- opportunities (automation for small businesses, NL + EN) ---------------------------
+pages.push({
+    path: "/opportunities/",
+    title: `Automatisering voor kleine bedrijven in regio Utrecht | ${SITE_NAME}`,
+    description:
+        "Veel handmatig werk in je bedrijf? Ik automatiseer bestellingen, voorraad, facturen en Excel-chaos voor kleine producenten, telers en lokale bedrijven in de regio Utrecht. Gratis kennismaking.",
+    image: abs(null),
+    body: `<h1>Veel handmatig werk in je bedrijf? Ik automatiseer het.</h1>
+<p>Ik help kleine producenten, telers en lokale bedrijven in de regio Utrecht om terugkerend handwerk te automatiseren: van Excel-sheets en papieren administratie tot koppelingen tussen systemen.</p>
+<h2>Ik werk voor jou, niet voor een softwarepakket</h2>
+<p>Ik zoek uit wat bij jouw bedrijf past: soms een functie in software die je al hebt, soms een bestaande tool, en alleen als niets past iets op maat.</p>
+<h2>Hoe het werkt</h2>${list([
+        "We praten 20 minuten, vrijblijvend.",
+        "Ik kijk waar je de meeste tijd of geld verliest en meet hoe lang dingen nu duren.",
+        "Je weet vooraf wat het kost: kleine klussen voor een vaste prijs, groter werk in stappen met elk een eigen prijs.",
+    ])}
+<h2>Wat ik automatiseer</h2>${list(["Bestellingen", "Voorraad", "Facturen", "Rapportages", "Excel-chaos", "Planning & routes"])}
+<h2>Waarom kleine bedrijven?</h2>
+<p>Een nieuw systeem is net als een nieuwe wijn: ik kan de formule maken, maar pas de tijd maakt er een goede wijn van. Grote bedrijven hebben gerijpte wijn nodig; in een klein bedrijf kunnen we samen proeven, bijsturen en er een beter product van maken.</p>
+<h2>Waarom ik dit doe</h2>
+<p>Ik geloof dat als ik bedrijven met een maatschappelijk doel help om hun werk makkelijker te maken, het uiteindelijk goedkoper wordt voor de mensen in dit land en in andere landen. Dit is de beste tijd voor optimalisatie. Per klant meet ik wat het oplevert.</p>
+<h2>Waarom ik</h2>
+<p>Ik zie het hele plaatje: websites, data, AI en servers. Je praat direct met de bouwer, ik zit in de regio Utrecht en ik doe dit uit eigen initiatief.</p>
+<h2>Waarom ik niet?</h2>
+<p>Eerlijk is eerlijk: ik ben geen specialist maar weet van alles wat, ik werk alleen, ik studeer nog en hoe ik onderhoud goed regel bespreken we per project vooraf.</p>
+<h2>Automation for small businesses (English)</h2>
+<p>Too much manual work in your business? I automate orders, inventory, invoices and spreadsheets for small producers, growers and local businesses. Free 20-minute intro call.</p>
+<p><a href="tel:+31624529477">Bel me / Call me: +31 6 24 52 94 77</a> · <a href="mailto:damianojongerius@gmail.com">Mail me / Email me</a></p>
+<p><a href="/">Back to ${SITE_NAME}</a></p>`,
+});
+
 // --- home page body (crawlable links to every page) -------------------------------------
 const homeBody = `<h1>${SITE_NAME} – Software Developer, AI &amp; Data</h1>
 <p>Portfolio and CV with work experience, studies and projects, including a dev log per project.</p>
